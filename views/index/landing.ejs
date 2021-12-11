@@ -11,20 +11,32 @@
     <title><%= process.env.COMPANY_NAME %></title>
   </head>
   <body>
+    <section id="landing">
+      <div class="landing-image one"></div>
+      <div class="landing-image two"></div>
+      <div class="landing-image three"></div>
+      <div class="landing-image four"></div>
+      <div class="landing-image five"></div>
+
       <div id="landing-header">
-     		<h1><%= process.env.COMPANY_NAME %></h1>
-        <h5>click to begin</h5>
+        <h1><%= process.env.COMPANY_NAME %></h1>
       </div>
+    </section>
 
-      <ul class="slideshow">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
-
+    <section id="about">
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <h1>TEST</h1>
+      </div>
+    </section>
+      
+    <section id="team">
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <h1>TEST 2 </h1>
+      </div>
+    </section>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="/js/anime.min.js"></script>
+    <script src="/js/section_scroll.js"></script>
   </body>
 </html>

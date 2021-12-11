@@ -1,66 +1,83 @@
-body {
+html, body {
   background: black;
+  margin: 0;
+  padding: 0;
+  /* overflow: hidden; */
+}
+
+section {
+  display: block;
+  height: 100vh;
+
+  transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1);
+  transition-duration: 0ms;
+  transform: translate(0px) translateZ(0px);
+}
+
+section#landing {
+  /* height: 100vh; */
+}
+
+section#about {
+  background: white;
+}
+
+section#team {
+  background: red;
+}
+
+.landing-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover !important;
+  background-repeat: no-repeat;
+  transition: all 0.5s ease;
+  animation: imageAnimation 50s linear infinite;
+  opacity: 0;
 }
 
 #landing-header {
   z-index: 1;
   position: relative;
-  text-align: center;
-  padding-top: 40vh;
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
 }
 
-h1{
+#landing-header h1 {
   font-size: 750%;
   text-shadow: 0px 0px 20px rgba(100, 100, 100, 1);
 }
 
-a:hover{
+a:hover {
   text-decoration: none;
 }
 
-.slideshow {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.slideshow li {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-size: cover;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  opacity: 0;
-  z-index: 0;
-  animation: imageAnimation 50s linear infinite;
-}
-
-.slideshow li:nth-child(1) {
+.landing-image.one {
   background-image: url(https://res.cloudinary.com/dkvqve4ln/image/upload/v1582779157/encouragemint/landing/fomef_green_mint_5k-wallpaper-1920x1200_lwf2b5.jpg);
 }
-.slideshow li:nth-child(2) {
+.landing-image.two {
   background-image: url(https://res.cloudinary.com/dkvqve4ln/image/upload/v1582809308/encouragemint/landing/lemon_and_mint-wallpaper-1920x1200_vaqvwo.jpg);
   animation-delay: 10s;
 }
-.slideshow li:nth-child(3) {
+.landing-image.three {
   background-image: url(https://res.cloudinary.com/dkvqve4ln/image/upload/v1582809310/encouragemint/landing/bruschetta_topped_with_tomato_parmesan_basil-wallpaper-1920x1200_gzykpq.jpg);
   animation-delay: 20s;
 }
-.slideshow li:nth-child(4) {
+.landing-image.four {
   background-image: url(https://res.cloudinary.com/dkvqve4ln/image/upload/v1582809307/encouragemint/landing/fresh_green_mint_leaves-wallpaper-1920x1200_i0uf6s.jpg);
   animation-delay: 30s;
 }
-.slideshow li:nth-child(5) {
+.landing-image.five {
   background-image: url(https://res.cloudinary.com/dkvqve4ln/image/upload/v1582779046/encouragemint/landing/shutterstock_609086588-1200x784_tcbstg.jpg);
   animation-delay: 40s;
 }
@@ -85,29 +102,4 @@ a:hover{
 /* Older browser support - .no-cssanimations class added by modernizr */
 .no-cssanimations .slideshow li {
 	opacity: 1;
-}
-
-h5 {
-  color: white;
-  opacity: 0;
-  text-shadow: 0px 0px 20px rgba(50, 50, 50, 1);
-  letter-spacing: 3px;
-  margin-top: 20px;
-  position: relative;
-  animation: 2s linear 5s 1 forwards zoomIn;
-}
-
-@keyframes zoomIn{
-  0% {
-    opacity: 0;
-    margin-top: 40px;
-    letter-spacing: 12px;
-    font-size: 2em;
-  }
-  100%{
-    opacity: 1;
-    margin-top: : 20px;
-    letter-spacing: 3px;
-    font-size: default;
-  }
 }
