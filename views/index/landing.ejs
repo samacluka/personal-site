@@ -12,25 +12,28 @@
   </head>
   <body>
     <section id="landing">
-      <div class="landing-image one"></div>
-      <div class="landing-image two"></div>
-      <div class="landing-image three"></div>
-      <div class="landing-image four"></div>
-      <div class="landing-image five"></div>
-
-      <div id="landing-header">
-        <h1><%= process.env.COMPANY_NAME %></h1>
+      <div class="content-wrapper">
+        <div id="landing-header">
+          <h1><%= process.env.COMPANY_NAME %></h1>
+        </div>
+  
+        <div class="landing-overlay" style="opacity: 0;"></div>
+        <div class="landing-image one"></div>
+        <div class="landing-image two"></div>
+        <div class="landing-image three"></div>
+        <div class="landing-image four"></div>
+        <div class="landing-image five"></div>
       </div>
     </section>
 
     <section id="about">
-      <div class="d-flex justify-content-center align-items-center h-100">
+      <div class="content-wrapper">
         <h1>TEST</h1>
       </div>
     </section>
       
     <section id="team">
-      <div class="d-flex justify-content-center align-items-center h-100">
+      <div class="content-wrapper">
         <h1>TEST 2 </h1>
       </div>
     </section>

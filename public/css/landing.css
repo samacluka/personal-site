@@ -2,7 +2,6 @@ html, body {
   background: black;
   margin: 0;
   padding: 0;
-  /* overflow: hidden; */
 }
 
 section {
@@ -12,6 +11,18 @@ section {
   transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1);
   transition-duration: 0ms;
   transform: translate(0px) translateZ(0px);
+}
+
+.content-wrapper {
+  height: 100%;
+  width: 100%;
+}
+
+section#about .content-wrapper,
+section#team .content-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 section#landing {
@@ -25,6 +36,21 @@ section#about {
 section#team {
   background: red;
 }
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20vh);
+  visibility: hidden;
+  transition: opacity 0.6s ease-out, transform 1.2s ease-out;
+  will-change: opacity, visibility;
+}
+
+.fade-in.is-visible {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+}
+
 
 .landing-image {
   position: fixed;
@@ -40,6 +66,19 @@ section#team {
   transition: all 0.5s ease;
   animation: imageAnimation 50s linear infinite;
   opacity: 0;
+}
+
+.landing-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  color: white;
+  background: white;
 }
 
 #landing-header {
@@ -97,9 +136,4 @@ a:hover {
   30% {
     opacity: 0
   }
-}
-
-/* Older browser support - .no-cssanimations class added by modernizr */
-.no-cssanimations .slideshow li {
-	opacity: 1;
 }
