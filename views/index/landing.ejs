@@ -5,7 +5,7 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link href="/css/landing.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/landing.css">
 
     <!-- TITLE -->
     <title><%= process.env.COMPANY_NAME %></title>
@@ -13,11 +13,12 @@
   <body>
     <section id="landing">
       <div class="content-wrapper">
+        <div class="overlay" style="opacity: 0;"></div>
+
         <div id="landing-header">
           <h1><%= process.env.COMPANY_NAME %></h1>
         </div>
   
-        <div class="landing-overlay" style="opacity: 0;"></div>
         <div class="landing-image one"></div>
         <div class="landing-image two"></div>
         <div class="landing-image three"></div>
@@ -28,13 +29,37 @@
 
     <section id="about">
       <div class="content-wrapper">
-        <h1>TEST</h1>
+        <div class="overlay" style="opacity: 0;"></div>
+
+        <i class="fal fa-4x fa-quote-left text-muted" style="opacity: 0.5;"></i>
+        <h3>
+          Making your business work for you
+        </h3>
+        <i class="fal fa-4x fa-quote-right"></i>
       </div>
     </section>
       
     <section id="team">
       <div class="content-wrapper">
-        <h1>TEST 2 </h1>
+        <div class="overlay" style="opacity: 0;"></div>
+        
+        <div class="d-flex justify-content-around align-items-center">
+          
+          <div class="flip-card-container">
+            <div class="flip-card">
+              <div class="flip-card-front">
+                <img src="/images/luka_samac.png" alt="Luka Samac">
+              </div>
+              <div class="flip-card-back">
+                <p>
+                  Graduating with a degree in Mechatronics Engineering and Management from McMaster University Luka consistently trades knowledge depth for breadth. Exemplified by his past experiences from working on drone research and the automation industry to managing funds over $200,000 Luka draws on an array of experiences to develop unique solutions. Personally, Luka enjoys being outside and active. If you can't find him portaging he may be rock climbing instead.
+                  <span>- Luka Samac -</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
 

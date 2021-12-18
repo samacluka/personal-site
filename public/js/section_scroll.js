@@ -34,6 +34,7 @@ $(document).ready(function(){
             duration: scroll.throttleDur,
             easing: 'linear',
             complete: () => {
+                ogPos = section * vh;
                 $(`section:nth-child(${section}) .fade-in`).addClass('is-visible');
             }
         })
@@ -125,11 +126,38 @@ $(document).ready(function(){
     // Scroll back to correct section when resized.
     window.addEventListener('resize', function(e) {
         scrollToSection(scroll.activeSection);
-    }, false);   
+    }, false);
+    
+    function sectionName(section){
+        switch(section) {
+            case 0: return 'landing';
+            case 1: return 'about';
+            case 2: return 'team';
+        }
+    }
+
+    var vh = $(window).height();
+    var ogPos = 0;
 
     $(window).on('scroll', function(e){
         var pos = $(window).scrollTop();
-        var vh = $(window).height();
-        $('.landing-overlay').css('opacity', (pos / vh));
+
+        var opacity = 0;
+        var sn = ogPos / vh;
+        if(pos > ogPos){ // down
+            opacity = (pos - ogPos) / vh;
+        }
+        else { // up
+            sn = sn - 1;
+            opacity = 1 - ((ogPos - pos) / vh);
+        }
+
+        if(opacity > 1) opacity = 1;
+        if(opacity < 0) opacity = 0;
+
+        sn = sectionName(sn);
+        if(!sn) return false;
+        
+        $(`#${sn} .overlay`).css('opacity', opacity);
     });
 });
