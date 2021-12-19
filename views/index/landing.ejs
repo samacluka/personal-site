@@ -41,23 +41,33 @@
       
     <section id="team">
       <div class="content-wrapper">
-        <div class="overlay" style="opacity: 0;"></div>
+        <!-- <div class="overlay" style="opacity: 0;"></div> -->
         
         <div class="d-flex justify-content-around align-items-center">
+
+          <% team.forEach(members => { %>
+            <div class="row">
+              <% members.forEach(member => { %>
+              <div class="col-md-<%- (12 / members.length) %>">
           
-          <div class="flip-card-container">
-            <div class="flip-card">
-              <div class="flip-card-front">
-                <img src="/images/luka_samac.png" alt="Luka Samac">
+                <div class="flip-card-container">
+                  <div class="flip-card">
+                    <div class="flip-card-front">
+                      <img src="<%= member.image %>" alt="<%= member.name %>">
+                    </div>
+                    <div class="flip-card-back">
+                      <p>
+                        <%= member.description %>
+                        <span>- <%= member.name %> -</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
               </div>
-              <div class="flip-card-back">
-                <p>
-                  Graduating with a degree in Mechatronics Engineering and Management from McMaster University Luka consistently trades knowledge depth for breadth. Exemplified by his past experiences from working on drone research and the automation industry to managing funds over $200,000 Luka draws on an array of experiences to develop unique solutions. Personally, Luka enjoys being outside and active. If you can't find him portaging he may be rock climbing instead.
-                  <span>- Luka Samac -</span>
-                </p>
-              </div>
+              <% }) %>
             </div>
-          </div>
+          <% }) %>
 
         </div>
       </div>
