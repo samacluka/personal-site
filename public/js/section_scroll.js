@@ -129,11 +129,7 @@ $(document).ready(function(){
     }, false);
     
     function sectionName(section){
-        switch(section) {
-            case 0: return 'landing';
-            case 1: return 'about';
-            case 2: return 'team';
-        }
+        return $(`section:nth-child(${section})`).attr('id');
     }
 
     var vh = $(window).height();
@@ -143,7 +139,7 @@ $(document).ready(function(){
         var pos = $(window).scrollTop();
 
         var opacity = 0;
-        var sn = ogPos / vh;
+        var sn = (ogPos / vh) + 1; // css is one-indexed, so +1
         if(pos > ogPos){ // down
             opacity = (pos - ogPos) / vh;
         }

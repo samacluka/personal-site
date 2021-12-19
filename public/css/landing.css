@@ -1,5 +1,5 @@
 html, body {
-  background: black;
+  background: white;
   margin: 0;
   padding: 0;
 }
@@ -26,15 +26,7 @@ section#team .content-wrapper{
 }
 
 section#landing {
-  /* height: 100vh; */
-}
-
-section#about {
-  background: white;
-}
-
-section#team {
-  background: red;
+  background: black;
 }
 
 .fade-in {
