@@ -8,5 +8,30 @@ module.exports = [
         name: "Justin Ballaro",
         image: "",
         description: "Coolest guy alive."
-    }
+    },
+    {
+        name: "Dan Pietrangelo",
+        image: "",
+        description: "Coolest guy alive."
+    },
+    {
+        name: "Max",
+        image: "",
+        description: "Coolest guy alive."
+    },
+    {
+        name: "Flavio",
+        image: "",
+        description: "Coolest guy alive."
+    },
+    {
+        name: "Stephon",
+        image: "",
+        description: "Coolest guy alive."
+    },
+    {
+        name: "Chris Adams",
+        image: "",
+        description: "Coolest guy alive."
+    },
 ];

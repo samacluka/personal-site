@@ -37,9 +37,9 @@ $(document).ready(function(){
                 ogPos = section * vh;
                 $(`section:nth-child(${section}) .fade-in`).addClass('is-visible');
             }
-        })
+        });
 
-        scroll.activeSection = section
+        scroll.activeSection = section;
     }
 
     window.addEventListener("keydown", function(e) {
@@ -61,11 +61,11 @@ $(document).ready(function(){
                 upSection();
             }
         }
-    }, false)
+    }, false);
 
     window.addEventListener('scroll', function(e) {
         e.preventDefault()
-    }, false)
+    }, false);
 
     window.addEventListener('wheel', function(e) {
         e.preventDefault();
@@ -84,13 +84,13 @@ $(document).ready(function(){
                 downSection();
             }
         }
-    }, false)
+    }, false);
 
     var initialY = null;
 
     window.addEventListener('touchstart', function(e) {
         initialY = e.touches[0].clientY;
-    }, false)
+    }, false);
 
     window.addEventListener('touchmove', function(e) {
         e.preventDefault();
@@ -154,6 +154,7 @@ $(document).ready(function(){
         sn = sectionName(sn);
         if(!sn) return false;
         
-        $(`#${sn} .overlay`).css('opacity', opacity);
+        $(`section:not(#${sn}) .overlay`).hide();
+        $(`#${sn} .overlay`).show().css('opacity', opacity);
     });
 });
