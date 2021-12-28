@@ -24,33 +24,41 @@ Array.prototype.chunk = function(perChunk){
   }, []);
 }
 
-Array.prototype.bsReduction = function(cls){
-  var i = this.indexOf(cls);
-  if(i == -1) return '';
+Array.prototype.groupBy = function(group){
+  var resultArray = {};
+  
+  this.forEach(val => {
+    if(typeof val[group] !== 'undefined'){
+      if(typeof resultArray[val[group]] !== 'undefined'){
+        resultArray[val[group]].push(val);
+      }
+      else {
+        resultArray[val[group]] = [val];
+      }
+    }
+  });
 
-  var before = i !== 0 ? 'd-none' : '';
-  var after = typeof this[i+1] !== 'undefined' ? `d${this[i+1]}-none` : '';
-  return `${before} d${cls}-flex ${after}`;
+  return resultArray;
 }
-
 
 // ======================================== INDEX ========================================
 // GET
 callbacks.index.get.landing = function(req,res){
-  var bss = ['', '-sm', '-md', '-lg' /*, '-xl' */];
-  var sizes = [{ chunk: 3, bs: '-lg' }, { chunk: 2, bs: '-md' }, { chunk: 1, bs: '-sm' }];
+  var sizes = [{ chunk: 1, bs: 'd-flex d-md-none' }, { chunk: 2, bs: 'd-none d-md-flex d-lg-none' }, { chunk: 3, bs: 'd-none d-lg-flex' }];
 
-  const arr = require(rootDir+'data/team.js'); 
+  const teamMembers = require(rootDir+'data/team.js');
   var team = [];
 
   sizes.forEach(size => {
-    team[size.chunk] = arr.chunk(size.chunk);  
+    team[size.chunk] = teamMembers.chunk(size.chunk);  
   });
+
+  var services = require(rootDir+'data/services.js').groupBy('group');
 
   return res.render(views.index.landing, {
     team: team,
     sizes: sizes,
-    bss: bss
+    services: services
   });
 };
 

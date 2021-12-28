@@ -39,7 +39,7 @@
         <div class="row w-100 h-75">
           <div class="column about-column h-100">
             <h1 class="title">About</h1>
-            <div class="content">
+            <div class="content about-content">
               <h4>
                 Helping your business work for you
               </h4>
@@ -50,14 +50,22 @@
 
           <div class="column services-column h-100">
             <h1 class="title">Services</h1>
-            <div class="content">
+            <div class="content services-content">
 
               <table>
                 <tbody>
-                  <tr>
-                    <td>Sick Web Design</td>
-                    <td>FREE</td>
-                  </tr>
+                  <% Object.keys(services).forEach(key => { %>
+                    <tr>
+                      <td class="text-center" colspan="3"><%= key %></td>
+                    </tr>
+                    <% services[key].forEach(service => { %>
+                      <tr>
+                        <td><%= service.title %></td>
+                        <td>&nbsp;</td>
+                        <td><%= service.price %></td>
+                      </tr>
+                    <% }) %>
+                  <% }) %>
                 </tbody>
               </table>
 
@@ -79,7 +87,7 @@
 
         <div class="carousel-wrapper">
           <% sizes.forEach((size, sIndex) => { %>
-            <div class="<%= bss.bsReduction(size.bs) %> h-100 align-items-center">
+            <div class="<%= size.bs %> h-100 align-items-center">
               <div class="team_carousel carousel slide w-100" data-interval="false">
                 <div class="carousel-inner h-100">
                   <% team[size.chunk] .forEach((members, tIndex) => { %>

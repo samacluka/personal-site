@@ -9,6 +9,7 @@ html, body {
 section {
   display: block;
   height: 100vh;
+  overflow-y: hidden;
 
   transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1);
   transition-duration: 0ms;
@@ -149,7 +150,7 @@ section#about .row {
 }
 
 section#about .row .column {
-  width: 40%;
+  width: 45%;
 }
 
 section#about .row .column .title {
@@ -160,15 +161,44 @@ section#about .row .column .title {
 
 section#about .row .column .content {
   height: 90%;
+}
 
+section#about .row .column .about-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
+section#about .row .column .services-content {
+  overflow-y: scroll;
+  display: block;
+  margin: auto;
+}
+
 section#about .services-column table {
-  width: 70%;
+  margin: auto;
+}
+
+/* >= lg */
+@media only screen and (min-width : 992px) {
+  section#about .row .column .services-content {
+    width: 75%;
+  }
+}
+
+/* md to lg */
+@media only screen and (min-width : 768px) and (max-width : 992px) {
+  section#about .row .column .services-content {
+    width: 85%;
+  }
+}
+
+/* <= md */
+@media only screen and (max-width : 768px) {
+  section#about .row .column .services-content {
+    width: 100%;
+  }
 }
 
 hr.verticle {
