@@ -1,4 +1,6 @@
 $(document).ready(function(){
+    $(window).scrollTop(0);
+
     const scrollElement =
         window.document.scrollingElement ||
         window.document.body ||
@@ -132,6 +134,7 @@ $(document).ready(function(){
         return $(`section:nth-child(${section})`).attr('id');
     }
 
+    /* Section fading */
     var vh = $(window).height();
     var ogPos = 0;
 
@@ -156,5 +159,14 @@ $(document).ready(function(){
         
         $(`section:not(#${sn}) .overlay`).hide();
         $(`#${sn} .overlay`).show().css('opacity', opacity);
+    });
+
+    /* Carousel */
+    $('.team_carousel .carousel-control-next').on('click', (e) => {
+        $('.team_carousel').carousel('next');
+    });
+
+    $('.team_carousel .carousel-control-prev').on('click', (e) => {
+        $('.team_carousel').carousel('prev');
     });
 });
