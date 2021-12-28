@@ -213,12 +213,12 @@ hr.verticle {
 
 
 /* LANDING SECTION */
-#team .title{
+#team .title {
   height: 10%;
+
   display: flex;
   justify-content: center;
-  align-items: center;
-  text-align: center;
+  align-items: end;
 }
 
 /* Member Cards */
