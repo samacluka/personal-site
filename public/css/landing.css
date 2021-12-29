@@ -201,9 +201,7 @@ section#about .services-column table {
   }
 }
 
-hr.verticle {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
-
+hr.vertical {
   height: 100%;
   width: 1px;
 
@@ -211,6 +209,13 @@ hr.verticle {
   margin-right: 0;
 }
 
+hr.tapered {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+hr.tapered.vertical {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
 
 /* LANDING SECTION */
 #team .title {
@@ -234,6 +239,9 @@ hr.verticle {
   height: 100%;
   transition: transform 1s;
   transform-style: preserve-3d;
+
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: 0.25rem;
 }
 
 .flip-card-container:hover .flip-card {
@@ -254,42 +262,41 @@ hr.verticle {
 }
 
 .flip-card-front {
-  background-color: #333;
-  color: #fff;
+  background-color: transparent;
+  color: #333;
 
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
 
 .flip-card-back {
-  background-color: #517fa4;
-  color: #fff;
+  background: rgb(255,255,255);
+  background: linear-gradient(0deg, rgba(247,249,249,1) 0%, rgba(237,243,245,1) 50%, rgba(247,249,249,1) 100%);
+
+  color: #333;
   transform: rotateY(180deg);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .flip-card-front img {
   max-width: 100%;
   max-height: 100%;
-  border-radius: 0.5rem;
+  border-radius: 0.25rem;
 }
-.flip-card-back p {
+.flip-card-container p {
   text-align: center;
   margin: 1rem;
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   line-height: 1.5rem;
 }
 
-.flip-card-back p span {
-  display: block;
-  font-size: 1rem;
-  font-style: italic;
-  font-weight: bold;
-  margin-top: 1.25rem;
-}
-
-.flip-card-front span {
+.flip-card-container span {
   display: block;
   font-size: 1rem;
   font-style: italic;

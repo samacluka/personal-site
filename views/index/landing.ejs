@@ -6,6 +6,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/landing.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,7 +47,7 @@
             </div>
           </div>
 
-          <hr class="verticle tapered">
+          <hr class="tapered vertical">
 
           <div class="column services-column h-100">
             <h1 class="title">Services</h1>
@@ -103,10 +104,19 @@
                                 <span>- <%= member.name %> -</span>
                               </div>
                               <div class="flip-card-back">
-                                <p>
-                                  <%= member.description %>
-                                  <span>- <%= member.name %> -</span>
-                                </p>
+                                <p class="mb-0"><%= member.description %></p>
+
+                                <% if(typeof member.socials !== 'undefined'){ %>
+                                  <div class="socials">
+                                    <% member.socials.forEach((social, cIndex) => { %>
+                                      <a href="<%- social.link %>">
+                                        <i class="<%- social.icon %>"></i>
+                                      </a>
+                                    <% }) %>
+                                  </div>
+                                <% } %>
+                                
+                                <span>- <%= member.name %> -</span>
                               </div>
                             </div>
                           </div>
