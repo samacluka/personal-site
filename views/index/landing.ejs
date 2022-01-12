@@ -91,13 +91,41 @@
             <div class="<%= size.bs %> h-100 align-items-center">
               <div class="team_carousel carousel slide w-100" data-interval="false">
                 <div class="carousel-inner h-100">
-                  <% team[size.chunk] .forEach((members, tIndex) => { %>
+                  <% team[size.chunk].forEach((members, tIndex) => { %>
                     <div class="carousel-item h-100 <%- tIndex == 0 ? 'active' : '' %>">
                       <div class="row h-100">
                         <% members.forEach((member, mIndex) => { %>
-                        <div class="column col-<%- (12 / size.chunk) %>">
+                        <div class="column col-<%- Math.floor(10 / size.chunk) %>">
+
+                          <div class="card" data-description="<%= member.description %>">
+                            <div class="card-header">
+                              <div class="row">
+                                <div class="col-4">
+                                  <img src="<%= member.image %>" alt="<%= member.name %>">  
+                                </div>
+                                <div class="col-7 offset-1">
+                                  <h3>
+                                    <%= member.name %><span class="credentials text-muted"><%- typeof member.credentials !== 'undefined' ? `, ${member.credentials}` : '' %></span>
+                                  </h3>
+                                  <% if(typeof member.position !== 'undefined'){ %>
+                                    <h6 class="position text-muted"><%= member.position %></h6>
+                                  <% } %>
+
+                                  <% if(typeof member.socials !== 'undefined'){ %>
+                                    <div class="socials">
+                                      <% member.socials.forEach((social, cIndex) => { %>
+                                        <a class="mr-2" href="<%- social.link %>">
+                                          <i class="<%- social.icon %>"></i>
+                                        </a>
+                                      <% }) %>
+                                    </div>
+                                  <% } %>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                     
-                          <div class="flip-card-container">
+                          <!-- <div class="flip-card-container">
                             <div class="flip-card">
                               <div class="flip-card-front">
                                 <img src="<%= member.image %>" alt="<%= member.name %>">
@@ -119,7 +147,7 @@
                                 <span>- <%= member.name %> -</span>
                               </div>
                             </div>
-                          </div>
+                          </div> -->
           
                         </div>
                         <% }) %>
