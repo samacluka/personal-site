@@ -44,20 +44,11 @@ Array.prototype.groupBy = function(group){
 // ======================================== INDEX ========================================
 // GET
 callbacks.index.get.landing = function(req,res){
-  var sizes = [{ chunk: 1, bs: 'd-flex d-md-none' }, { chunk: 2, bs: 'd-none d-md-flex d-lg-none' }, { chunk: 3, bs: 'd-none d-lg-flex' }];
-
-  const teamMembers = require(rootDir+'data/team.js');
-  var team = [];
-
-  sizes.forEach(size => {
-    team[size.chunk] = teamMembers.chunk(size.chunk);  
-  });
-
+  var team = require(rootDir+'data/team.js');
   var services = require(rootDir+'data/services.js').groupBy('group');
 
   return res.render(views.index.landing, {
     team: team,
-    sizes: sizes,
     services: services
   });
 };

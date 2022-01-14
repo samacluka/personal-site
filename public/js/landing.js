@@ -161,12 +161,15 @@ $(document).ready(function(){
         $(`#${sn} .overlay`).show().css('opacity', opacity);
     });
 
-    /* Carousel */
-    $('.team_carousel .carousel-control-next').on('click', (e) => {
-        $('.team_carousel').carousel('next');
-    });
+    $('.card :not(a)').on('click', function(e){
+        $card = $(this).parent('.card');
 
-    $('.team_carousel .carousel-control-prev').on('click', (e) => {
-        $('.team_carousel').carousel('prev');
-    });
+        var $header = $card.find('.member-info-column').html();
+        $('#modal .modal-header').html($header);
+
+        var $desc = $card.data('description');
+        $('#modal .modal-body').html($desc);
+
+        $('#modal').modal('show');
+    })
 });
