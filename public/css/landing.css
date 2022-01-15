@@ -230,11 +230,39 @@ hr.tapered.vertical {
   background: rgb(255,255,255);
   background: linear-gradient(0deg, rgba(247,249,249,1) 0%, rgba(237,243,245,1) 50%, rgba(247,249,249,1) 100%);
 
+  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(231, 231, 231, 0.2);
+
   color: #333;
 }
 
 .card:hover {
   cursor: pointer;
+  
+  -webkit-animation: shadow_on_hover 0.2s linear forwards;
+  animation: shadow_on_hover 0.2s linear forwards;
+
+  transition: box-shadow 100ms ease-in;
+}
+
+@-webkit-keyframes shadow_on_hover {
+  0% {
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+  }
+
+  100% {
+    box-shadow: 0px 10px 10px -3px rgba(0, 0, 0, 0.6);
+  }
+}
+
+@keyframes shadow_on_hover {
+  0% {
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+  }
+
+  100% {
+    box-shadow: 0px 10px 10px -3px rgba(0, 0, 0, 0.6);
+  }
 }
 
 .card img,
