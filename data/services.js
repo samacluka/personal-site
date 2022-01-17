@@ -1,46 +1,46 @@
 module.exports = [
     {
-        title: "Excel / data organization",
+        title: "Excel / Data Organization",
         price: "FREE",
         group: "Software"
     },
     {
-        title: "point of sale data analytics and insights",
+        title: "Point of Sale Data Analytics and Insights",
         price: "FREE",
         group: "Software"
     },
     {
-        title: "Software systems integrations",
+        title: "Software Systems Integrations",
         price: "FREE",
         group: "Software"
     },
     {
-        title: "SEO optimization",
+        title: "SEO Optimization",
         price: "FREE",
         group: "Software"
     },
     {
-        title: "Website improvements",
+        title: "Website Improvements",
         price: "FREE",
         group: "Software"
     },
     {
-        title: "general engineering / technology consulting",
+        title: "General Engineering / Technology Consulting",
         price: "FREE",
         group: "Software"
     },
     {
-        title: "app development",
+        title: "App Development",
         price: "FREE",
         group: "Software"
     },
     {
-        title: "Market analysis",
+        title: "Market Analysis",
         price: "FREE",
         group: "Business"
     },
     {
-        title: "Process automation / optimization",
+        title: "Process Automation / Optimization",
         price: "FREE",
         group: "Business"
     },
@@ -55,12 +55,12 @@ module.exports = [
         group: "Business"
     },
     {
-        title: "Recruitment optimization",
+        title: "Recruitment Optimization",
         price: "FREE",
         group: "Business"
     },
     {
-        title: "general business consulting",
+        title: "General Business Consulting",
         price: "FREE",
         group: "Business"
     },
