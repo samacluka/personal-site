@@ -90,16 +90,17 @@
           <% team.forEach((member, mIndex) => { %>
             <div class="col-12 col-md-6 col-lg-4">
 
-              <div class="card mb-1" data-description="<%= member.description %>">
-                <div class="card-header" style="border-bottom: none;">
-                  <div class="row">
-                    <div class="col-4 d-none d-lg-inline member-img-column">
+              <div class="card mb-3" data-description="<%= member.description %>">
+                <div class="card-header px-1" style="border-bottom: none;">
+                  <div class="d-flex">
+                    <div class="d-none d-lg-inline member-img-column">
                       <img src="<%= member.image %>" alt="<%= member.name %>">  
                     </div>
-                    <div class="col-12 col-lg-7 offset-0 offset-lg-1 member-info-column">
-                      <h3>
+                    <div class="ml-2 member-info-column">
+                      <h5>
                         <%= member.name %><span class="credentials text-muted"><%- typeof member.credentials !== 'undefined' ? `, ${member.credentials}` : '' %></span>
-                      </h3>
+                      </h5>
+
                       <% if(typeof member.position !== 'undefined'){ %>
                         <h6 class="position text-muted"><%= member.position %></h6>
                       <% } %>

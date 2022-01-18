@@ -226,6 +226,10 @@ hr.tapered.vertical {
 }
 
 /* Member Cards */
+.member-info-column {
+  margin: auto 0 auto 0.5rem;
+}
+
 .card {
   background: rgb(255,255,255);
   background: linear-gradient(0deg, rgba(247,249,249,1) 0%, rgba(237,243,245,1) 50%, rgba(247,249,249,1) 100%);

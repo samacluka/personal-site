@@ -164,7 +164,7 @@ $(document).ready(function(){
     $('.card :not(a)').on('click', function(e){
         $card = $(this).parent('.card');
 
-        var $header = $card.find('.member-info-column').html();
+        var $header = $card.find('.card-header').html();
         $('#modal .modal-header').html($header);
 
         var $desc = $card.data('description');
