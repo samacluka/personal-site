@@ -161,8 +161,8 @@ $(document).ready(function(){
         $(`#${sn} .overlay`).show().css('opacity', opacity);
     });
 
-    $('.card :not(a)').on('click', function(e){
-        $card = $(this).parent('.card');
+    $('.card').on('click', function(e){
+        $card = $(this);
 
         var $header = $card.find('.card-header').html();
         $('#modal .modal-header').html($header);
