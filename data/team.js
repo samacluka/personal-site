@@ -23,7 +23,7 @@ module.exports = [
     {
         name: "Justin Ballaro",
         image: "/images/justin_ballaro.jpeg",
-        description: "Coolest guy alive.",
+        description: "Justin is a McMaster University graduate with a degree in Mechatronics Engineering & Management.  He comes from a background in sales solutions engineering. Specially, the acquisition and onboarding of business partners and strategic account management. Justin brings an array of skills to the team including technical knowledge in the areas of software development and nuclear research.",
         credentials: "B.Eng.Mgmt",
         position: "Partner",
         socials: [
