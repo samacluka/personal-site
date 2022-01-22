@@ -232,7 +232,7 @@ hr.tapered.vertical {
 }
 
 /* TEAM SECTION */
-#team .title {
+#team .title-container {
   height: 10%;
 
   display: flex;
