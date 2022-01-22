@@ -95,6 +95,7 @@ section#landing {
 }
 
 #landing-header h1 {
+  font-size: 13vw;
   text-shadow: 0px 0px 20px rgba(100, 100, 100, 1);
 }
 
@@ -168,6 +169,15 @@ section#about .row .column .about-content {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+section#about .about-content h4 {
+  font-weight: 300;
+  text-align: center;
+}
+
+section#about .about-content h4:first-of-type {
+  margin-bottom: 2rem;
 }
 
 section#about .row .column .services-content {
