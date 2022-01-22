@@ -28,7 +28,7 @@ $(document).ready(function(){
     $(window).on('scroll', fadeSection);
     fadeSection(); // on page load
 
-    $('.card').on('click', function(e){
+    $('.card[data-description]').on('click', function(e){
         $card = $(this);
 
         var $header = $card.find('.card-header').html();

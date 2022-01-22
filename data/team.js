@@ -44,7 +44,7 @@ module.exports = [
     {
         name: "Dan Pietrangelo",
         image: "/images/daniel_pietrangelo.jpeg",
-        description: "Coolest guy alive.",
+        description: "",
         credentials: "B.Eng.Mgmt",
         position: "Partner",
         socials: [
@@ -53,7 +53,7 @@ module.exports = [
                 icon: "fab fa-linkedin"
             },
             {
-                link: "mailto:@gmail.com",
+                link: "mailto:",
                 icon: "fas fa-envelope"
             },
             {
@@ -74,7 +74,7 @@ module.exports = [
                 icon: "fab fa-linkedin"
             },
             {
-                link: "mailto:@gmail.com",
+                link: "mailto:",
                 icon: "fas fa-envelope"
             },
             {
@@ -86,7 +86,7 @@ module.exports = [
     {
         name: "Flavio Leite",
         image: "/images/favio_leite.jpeg",
-        description: "Coolest guy alive.",
+        description: "",
         credentials: "M. Eng",
         position: "Partner",
         socials: [
@@ -95,7 +95,7 @@ module.exports = [
                 icon: "fab fa-linkedin"
             },
             {
-                link: "mailto:@gmail.com",
+                link: "mailto:",
                 icon: "fas fa-envelope"
             },
             {
@@ -116,7 +116,7 @@ module.exports = [
                 icon: "fab fa-linkedin"
             },
             {
-                link: "mailto:@gmail.com",
+                link: "mailto:",
                 icon: "fas fa-envelope"
             },
             {
@@ -137,7 +137,7 @@ module.exports = [
                 icon: "fab fa-linkedin"
             },
             {
-                link: "mailto:@gmail.com",
+                link: "mailto:",
                 icon: "fas fa-envelope"
             },
             {

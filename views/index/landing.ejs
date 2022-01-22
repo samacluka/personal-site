@@ -94,7 +94,7 @@
           <% team.forEach((member, mIndex) => { %>
             <div class="col-12 col-md-6 col-lg-4">
 
-              <div class="card mb-3" data-description="<%= member.description %>">
+              <div class="card mb-3" <% if(!!member.description.trim().length){ %> data-description="<%= member.description %>" <% } %>>
                 <div class="card-header px-1" style="border-bottom: none;">
                   <div class="d-flex">
                     <div class="member-img-column">
@@ -112,9 +112,11 @@
                       <% if(typeof member.socials !== 'undefined'){ %>
                         <div class="socials">
                           <% member.socials.forEach((social, cIndex) => { %>
-                            <a class="mr-2" href="<%- social.link %>">
-                              <i class="<%- social.icon %>"></i>
-                            </a>
+                            <% if(social.link.trim() !== "" && social.link.slice(-1) !== ":"){ %>
+                              <a class="mr-2" href="<%- social.link %>">
+                                <i class="<%- social.icon %>"></i>
+                              </a>
+                            <% } %>
                           <% }) %>
                         </div>
                       <% } %>
