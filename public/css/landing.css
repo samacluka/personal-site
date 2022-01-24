@@ -250,7 +250,16 @@ hr.tapered.vertical {
   align-items: end;
 }
 
-/* Member Cards */
+section#team .row {
+  height: 100%;
+  width: 75%;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .member-info-column {
   margin: auto 0 auto 0.5rem;
 }
