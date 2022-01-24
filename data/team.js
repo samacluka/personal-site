@@ -44,7 +44,7 @@ module.exports = [
     {
         name: "Dan Pietrangelo",
         image: "/images/daniel_pietrangelo.jpeg",
-        description: "",
+        description: "As graduate of McMaster's Mechatronics Engineering and Management program, Daniel has a breadth of knowledge in both the field of commerce as well as engineering. He has developed the skills necessary to provide in depth financial analysis, approach problems with an analytical mindset, and come up with feasible solutions for a variety of situations. As a software developer in the banking industry, Daniel has learned what it means to provide outstanding customer service and put forth new and exciting ideas. Outside of work, he is an avid football fan and a lover of great food and beer.",
         credentials: "B.Eng.Mgmt",
         position: "Partner",
         socials: [
@@ -53,7 +53,7 @@ module.exports = [
                 icon: "fab fa-linkedin"
             },
             {
-                link: "mailto:",
+                link: "mailto:daniel.pietrangelo11@gmail.com",
                 icon: "fas fa-envelope"
             },
             {
@@ -108,7 +108,7 @@ module.exports = [
         name: "Stephon Ryan",
         image: "/images/stephon_ryan.jpeg",
         description: "An enthusiastic Biomedical Engineering graduate eager to contribute to team success through hard work, attention to detail, and excellent organizational skills. Possesses a clear understanding of Medical device design and Biocompatibility and training in CAD software. Motivated to learn, grow, and excel in the medical device industry.",
-        credentials: "B.Eng",
+        credentials: "EIT",
         position: "Partner",
         socials: [
             {
@@ -116,11 +116,11 @@ module.exports = [
                 icon: "fab fa-linkedin"
             },
             {
-                link: "mailto:",
+                link: "mailto:s.ryan@hotmail.ca",
                 icon: "fas fa-envelope"
             },
             {
-                link: "tel:",
+                link: "tel:9059661185",
                 icon: "fas fa-phone"
             },
         ]
