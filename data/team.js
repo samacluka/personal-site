@@ -65,7 +65,7 @@ module.exports = [
     {
         name: "Max Hajdecki",
         image: "/images/max_hajdecki.jpeg",
-        description: "Max is a graduate of Queen’s University with a B.A.Sc. in mining engineering. His professional roles have ranged from haul truck operation to mine planning, giving him a foundational understanding of the mining process. His long-term goal is to work at the intersection of economics and mining engineering, turning natural capital into human capital.",
+        description: "Max is a graduate of Queen’s University mining engineering. Experienced in mine operations and engineering, from a corporate to boots on the ground perspective. His strengths include excel modelling, presentation development and delivery, and relationship building.",
         credentials: "EIT",
         position: "Partner",
         socials: [
@@ -74,11 +74,11 @@ module.exports = [
                 icon: "fab fa-linkedin"
             },
             {
-                link: "mailto:",
+                link: "mailto:Max.hajdecki@hotmail.com",
                 icon: "fas fa-envelope"
             },
             {
-                link: "tel:",
+                link: "tel:+19057415032",
                 icon: "fas fa-phone"
             },
         ]
