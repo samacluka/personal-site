@@ -28,15 +28,26 @@ $(document).ready(function(){
     $(window).on('scroll', fadeSection);
     fadeSection(); // on page load
 
-    $('.card[data-description]').on('click', function(e){
-        $card = $(this);
+    $('.flip-card-container').on('click', function(e){
+        if( $(e.target).closest('.camera-button').length ) return;
+        let input = $(this).find('.flip-input'); 
+        input.prop('checked', !input.prop('checked'));
+    });
 
-        var $header = $card.find('.card-header').html();
-        $('#modal .modal-header').html($header);
+    $('[data-toggle="popover"]').popover({
+        container: 'body',
+        trigger: 'hover click',
+        html: true
+    });
 
-        var $desc = $card.data('description');
-        $('#modal .modal-body').html($desc);
+    $('.hasHover').on('mouseover mouseout', function(e){
+        $(this).find('.regular').toggle();
+        $(this).find('.hover').toggle();
+    });
 
-        $('#modal').modal('show');
+    $('html').on('click', function(e) {
+        if (!$(e.target).is('[data-toggle="popover"]') && $(e.target).closest('.popover').length == 0) {
+            $('[data-toggle="popover"]').popover('hide');
+        }
     });
 });

@@ -2,23 +2,33 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <meta name="description" content="Small Business Consulting">
-    <meta name="keywords" content="Toronto, Ontario, Canada, Contact, Consulting, Business, Software">
+    <meta name="description" content="Luka Samac's Portfolio Website">
+    <meta name="keywords" content="Toronto, Ontario, Canada, Belgrade, Serbia, Luka, Samac, Portfolio, Consulting, Business, Software">
     <meta name="author" content="Luka Samac">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- CSS -->
+    <!-- External CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/landing.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="/css/about.css">
+    <link rel="stylesheet" href="/css/socials.css">
     
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Pushster&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Pushster&display=swap" rel="stylesheet"> 
 
     <!-- TITLE -->
-    <title><%= process.env.COMPANY_NAME %></title>
+    <title><%= process.env.PERSON_NAME %></title>
+
+    <!-- FAVICON -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon1/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon1/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon1/favicon-16x16.png">
+    <link rel="manifest" href="/images/favicon1/site.webmanifest">
   </head>
   <body>
     <section id="landing">
@@ -26,14 +36,22 @@
         <div class="overlay" style="opacity: 0; display: none;"></div>
 
         <div id="landing-header">
-          <h1 class="title"><%= process.env.COMPANY_NAME %></h1>
+          <h1 class="title"><%= process.env.PERSON_NAME %></h1>
         </div>
+
+        <div class="background-image one"></div>
+        <div class="background-image two"></div>
+        <div class="background-image three"></div>
+        <div class="background-image four"></div>
+        <div class="background-image five"></div>
+        <div class="background-image six"></div>
   
         <div class="landing-image one"></div>
         <div class="landing-image two"></div>
         <div class="landing-image three"></div>
         <div class="landing-image four"></div>
         <div class="landing-image five"></div>
+        <div class="landing-image six"></div>
       </div>
     </section>
 
@@ -43,30 +61,80 @@
 
         <div class="row w-100 h-75">
           <div class="column about-column h-100">
-            <h1 class="title">About</h1>
+            <h1 class="title">About Me</h1>
             <div class="content about-content">
-              <h4>Small business consulting done right.</h4>
-              <h4><%= process.env.COMPANY_NAME %> provides organizational, technical, and marketing solutions to small businesses in Southern Ontario. By optimizing the condition of your business, <%= process.env.COMPANY_NAME %> helps your business work for you.</h4>
+
+              <% abouts.forEach((about, index) => { %>
+                <div class="flip-card-container">
+                  <input class="flip-input" type="checkbox" style="display: none;">
+                  <div class="flip-card">
+                    <div class="flip-card-front alert <%= about.front.classes %>">
+                      <%- about.front.html %>
+                    </div>
+                    <div class="flip-card-back alert <%= about.back.classes %>">
+                      <%- about.back.html %>
+                      <!-- <div class="camera-button" data-toggle="modal" data-target="#modal<%= index %>">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M149.1 64.8L138.7 96H64C28.7 96 0 124.7 0 160V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V160c0-35.3-28.7-64-64-64H373.3L362.9 64.8C356.4 45.2 338.1 32 317.4 32H194.6c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
+                      </div> -->
+                    </div>
+                  </div>
+                </div>
+
+                <!-- <div class="modal fade" id="modal<%= index %>" tabindex="-1" role="dialog" aria-labelledby="modal<%= index %>Label" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <h1>works</h1>
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+              <% }); %>
+
             </div>
           </div>
 
           <hr class="tapered vertical">
 
-          <div class="column services-column h-100">
-            <h1 class="title">Services</h1>
-            <div class="content services-content">
+          <div class="column skills-column h-100">
+            <h1 class="title">Skills</h1>
+            <div class="content skills-content">
 
               <table>
                 <tbody>
-                  <% Object.keys(services).forEach(key => { %>
+                  <% Object.keys(skills).forEach(group => { %>
                     <tr>
-                      <td class="text-center" colspan="3"><%= key %></td>
+                      <td class="text-center group-cell" colspan="3">
+                        <h4>
+                          <%= group %>
+                        </h4>
+                      </td>
                     </tr>
-                    <% services[key].forEach(service => { %>
+                    <% skills[group].forEach(skill => { %>
                       <tr>
-                        <td><%= service.title %></td>
+                        <td
+                          <% if(!!skill.popoverText){ %> 
+                            data-toggle="popover" data-placement="left" data-content="<%= skill.popoverText %>"
+                          <% } %>
+                        >
+                          <%= skill.title %>
+                        </td>
                         <td>&nbsp;</td>
-                        <td><%= service.price %></td>
+                        <td>
+                          <div class="progress">
+                            <div class="progress-bar positive" role="progressbar" style="width: <%= skill.strength %>%;" aria-valuenow="<%= skill.strength %>" aria-valuemin="0" aria-valuemax="100">
+                              <%= skill.strength %>%
+                            </div>
+                            <% if(skill.strength != 100){ %>
+                              <div class="progress-bar negative" role="progressbar" style="width: <%= 100 - skill.strength %>%;" aria-valuenow="<%= 100 - skill.strength %>" aria-valuemin="0" aria-valuemax="100"></div>
+                            <% } %>
+                          </div>
+                        </td>
                       </tr>
                     <% }) %>
                   <% }) %>
@@ -79,66 +147,35 @@
       </div>
     </section>
       
-    <section id="team">
+    <section id="socials">
       <div class="content-wrapper">
         <div class="overlay" style="opacity: 0; display: none;"></div>
 
         <div class="title-container">
           <h1 class="title">
-            Team
+            Socials
           </h1>
         </div>
 
-        <div class="row">
-          <% team.forEach((member, mIndex) => { %>
-            <div class="col-12 col-md-6 col-lg-4">
-
-              <div class="card mb-3" <% if(!!member.description.trim().length){ %> data-description="<%= member.description %>" <% } %>>
-                <div class="card-header px-1" style="border-bottom: none;">
-                  <div class="d-flex">
-                    <div class="member-img-column">
-                      <img src="<%= member.image %>" alt="<%= member.name %>">  
-                    </div>
-                    <div class="ml-2 member-info-column">
-                      <h5>
-                        <%= member.name %><span class="credentials text-muted"><%- typeof member.credentials !== 'undefined' ? `, ${member.credentials}` : '' %></span>
-                      </h5>
-
-                      <% if(typeof member.position !== 'undefined'){ %>
-                        <h6 class="position text-muted"><%= member.position %></h6>
-                      <% } %>
-
-                      <% if(typeof member.socials !== 'undefined'){ %>
-                        <div class="socials">
-                          <% member.socials.forEach((social, cIndex) => { %>
-                            <% if(social.link.trim() !== "" && social.link.slice(-1) !== ":"){ %>
-                              <a class="mr-2" href="<%- social.link %>">
-                                <i class="<%- social.icon %>"></i>
-                              </a>
-                            <% } %>
-                          <% }) %>
-                        </div>
-                      <% } %>
-                    </div>
-                  </div>
+        <div class="socials">
+          <% socials.forEach((social) => { %>
+            <a data-toggle="popover" data-placement="top" data-content="<%= social.title %>" href="<%= social.href %>" target="_blank" class="social-link <%= social.hoverClasses %>">
+              <% if(social.svg){ %>
+                <div class="svg <%- social.hoverSvg ? 'hasHover' : '' %>">
+                  <%- social.svg %>
+                  <%- social.hoverSvg ? social.hoverSvg : '' %>
                 </div>
-              </div>          
-            </div>
+              <% } else { %> 
+                <i class="<%= social.iconClasses %>" aria-hidden="true"></i>
+              <% } %>
+            </a>
           <% }) %>
         </div>
       </div>
     </section>
 
-    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true" style="z-index: 1500;">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header"></div>
-          <div class="modal-body"></div>
-        </div>
-      </div>
-    </div>
-
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha512-Ua/7Woz9L5O0cwB/aYexmgoaD7lw3dWe9FvXejVdgqu71gRog3oJgjSWQR55fwWx+WKuk8cl7UwA1RS6QCadFA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.usebootstrap.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script src="/js/anime.min.js"></script>
     <script src="/js/landing.js"></script>

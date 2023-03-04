@@ -1,0 +1,95 @@
+section#socials .title-container {
+  height: 10%;
+
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+section#socials .socials {
+  height: 90vh;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* <= sm */
+@media only screen and (max-width : 768px) {
+  section#socials .socials {
+    flex-direction: column;
+  }
+}
+
+section#socials .social-link {
+  height: 100px;
+  width: 100px;
+  font-size: 100px;
+  line-height: 100px;
+  font-weight: 500;
+  text-decoration: none;
+
+  -webkit-animation: drop 0.2s linear forwards;
+  animation: drop 0.2s linear forwards;
+  transition: drop 100ms ease-out;
+}
+
+section#socials .social-link:hover {
+  -webkit-animation: raise 0.2s linear forwards;
+  animation: raise 0.2s linear forwards;
+  transition: raise 100ms ease-in;
+}
+
+@-webkit-keyframes drop {
+  0% {
+    transform: translateY(0px) scale(1.2);
+  }
+
+  100% {
+    transform: translateY(5px) scale(1);
+  }
+}
+
+@-webkit-keyframes raise {
+  0% {
+    transform: translateY(0px) scale(1);
+  }
+
+  100% {
+    transform: translateY(-5px) scale(1.2);
+  }
+}
+
+section#socials .social-link svg {
+  fill: #a3a7b3;
+}
+
+section#socials .twitter:hover svg {
+  fill: #4b98ef;
+}
+
+section#socials .instagram:hover {
+  background: #f09433; 
+  background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+  background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+  background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+section#socials .github:hover svg {
+  fill: black;
+}
+
+section#socials .linkedin:hover svg {
+  fill: #3776b1;
+}
+
+section#socials .email:hover svg {
+  fill: #78D2E1;
+}
+
+section#socials .resume:hover svg {
+  fill: #78D2E1;
+}

@@ -44,12 +44,14 @@ Array.prototype.groupBy = function(group){
 // ======================================== INDEX ========================================
 // GET
 callbacks.index.get.landing = function(req,res){
-  var team = require(rootDir+'data/team.js');
-  var services = require(rootDir+'data/services.js').groupBy('group');
+  var abouts = require(rootDir+'data/about.js');
+  var socials = require(rootDir+'data/socials.js');
+  var skills = require(rootDir+'data/skills.js').groupBy('group');
 
   return res.render(views.index.landing, {
-    team: team,
-    services: services
+    abouts: abouts,
+    socials: socials,
+    skills: skills
   });
 };
 

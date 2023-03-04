@@ -1,0 +1,359 @@
+/* ABOUT SECTION */
+section#about .content-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+
+section#about .content-wrapper > .row {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+section#about .row .column {
+  width: 45%;
+}
+
+section#about .row .column .title {
+  height: 10%;
+
+  text-align: center;
+}
+
+section#about .row .column .content {
+  height: 90%;
+}
+
+section#about .row .column .about-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+section#about .about-content h4 {
+  font-size: 1.5rem;
+
+  /* font-weight: 300; */
+  text-align: center;
+  
+  line-height: inherit; 
+  margin-bottom: 0;
+}
+
+/* CUSTOM ALERTS */
+section#about .alert {
+  border-radius: 3rem;
+}
+
+.alert-purple hr { border-top-color: #5910864A; }
+.alert-purple,
+.alert-purple a {
+	color: #511178;
+	background-color: #c590dd;
+}
+.alert-purple svg { fill: #511178; }
+
+.alert-salmon hr { border-top-color: #721b003A; }
+.alert-salmon,
+.alert-salmon a {
+	color: #721B00;
+	background-color: #FF8C69;
+}
+.alert-salmon svg { fill: #721B00; }
+
+.alert-lightblue hr { border-top-color: #1658633A; }
+.alert-lightblue,
+.alert-lightblue a {
+	color: #165863;
+	background-color: #78D2E1;
+}
+.alert-lightblue svg { fill: #165863; }
+
+.alert-peach hr { border-top-color: #cd723287; }
+.alert-peach,
+.alert-peach a {
+	color: #632E0C;
+	background-color: #FFA262;
+}
+.alert-peach svg { fill: #632E0C; }
+
+.alert-red hr { border-top-color: #6719193A; }
+.alert-red,
+.alert-red a {
+	color: #671919;
+	background-color: #FF7575;
+}
+.alert-red svg { fill: #671919; }
+
+/* FLIP CARDS */
+.flip-card-container {
+  width: 400px;
+  height: 165px;
+  perspective: 1000px;
+  margin-bottom: 10px;
+}
+
+.flip-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.flip-card-container:hover .flip-card,
+.flip-card-container .flip-input:checked ~ .flip-card {
+  transform: rotateY(180deg); /* <=>  rotateY(.5turn) */
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border-radius: 0.5rem; */
+  cursor: pointer;
+}
+
+.flip-card-back {
+  display: flex;
+  flex-direction: column;
+
+  font-size: 1rem;
+
+  transform: rotateY(180deg);
+}
+
+.flip-card-back .camera-button {
+  justify-self: end;
+
+  height: 25px;
+  width: 25px;
+  font-size: 25px;
+  line-height: 25px;
+  font-weight: 600;
+  text-decoration: none;
+
+  -webkit-transition: transform 0.2s ease-in-out;
+  -moz-transition: transform 0.2s ease-in-out;
+  -ms-transition: transform 0.2s ease-in-out;
+  -o-transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  transform: translateY(0px);
+}
+
+.flip-card-back .camera-button:hover {
+  transform: translateY(-5px);
+}
+
+/* CHECKMARKS AS BULLETS */
+ul.custom {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0.1rem;
+}
+
+ul li.custom {
+  position: relative;
+  padding-left: 1.5em;
+}
+
+ul li.regular:before {
+  position: absolute;
+  left: 0;
+  width: 1em;
+  height: 1em;
+}
+
+ul li.checkmark:before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  width: 1em;
+  height: 1em;
+}
+
+section#about .about-content h4:not(:last-of-type) {
+  /* font-size: 2.5vw; */
+  /* margin-bottom: 2rem; */
+}
+
+section#about .about-content h4:last-of-type {
+  /* font-size: 2vw; */
+}
+
+/* SKILLS CONTENT */
+section#about .row .column .skills-content {
+  display: block;
+  margin: auto;
+}
+
+section#about .skills-column table td:not(.group-cell) {
+  font-size: 1.25rem;
+}
+
+section#about .skills-column table td:hover {
+  cursor: pointer;
+}
+
+section#about .skills-column table {
+  margin: auto;
+
+  background: -webkit-linear-gradient(
+      90deg,
+      rgba(255, 0, 0, 1) 0%,
+      rgba(255, 154, 0, 1) 10%,
+      rgba(208, 222, 33, 1) 20%,
+      rgba(79, 220, 74, 1) 30%,
+      rgba(63, 218, 216, 1) 40%,
+      rgba(47, 201, 226, 1) 50%,
+      rgba(28, 127, 238, 1) 60%,
+      rgba(95, 21, 242, 1) 70%,
+      rgba(186, 12, 248, 1) 80%,
+      rgba(251, 7, 217, 1) 90%,
+      rgba(255, 0, 0, 1) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-animation: fadeInRainbow 0.2s linear forwards;
+  animation: fadeInRainbow 0.2s linear forwards;
+  transition: fadeInRainbow 100ms ease-in;
+}
+
+section#about .skills-column table td:hover {
+  -webkit-animation: fadeOutRainbow 0.2s linear forwards;
+  animation: fadeOutRainbow 0.2s linear forwards;
+  transition: fadeOutRainbow 100ms ease-in;
+}
+
+@-webkit-keyframes fadeInRainbow {
+  0% {
+    -webkit-text-fill-color: transparent;
+  }
+
+  100% {
+    -webkit-text-fill-color: black;
+  }
+}
+
+@-webkit-keyframes fadeOutRainbow {
+  0% {
+    -webkit-text-fill-color: black;
+  }
+
+  100% {
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+/* SKILL STRENGTH BARS */
+section#about .skills-column .progress {
+  width: 100px;
+  background-color: #ffffff7f;
+}
+
+section#about .skills-column .progress-bar.negative {
+  background-color: #ffffff;
+  border-top: 1px solid #d9d9d9;
+  border-right: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+section#about .skills-column .progress-bar.positive {
+  background-color: black;
+  
+  -webkit-animation: fadeInProgress 0.2s linear forwards;
+  animation: fadeInProgress 0.2s linear forwards;
+  transition: fadeInProgress 100ms ease-in;
+}
+
+section#about .skills-column .progress-bar.positive:hover {
+  -webkit-animation: fadeOutProgress 0.2s linear forwards;
+  animation: fadeOutProgress 0.2s linear forwards;
+  transition: fadeOutProgress 100ms ease-in;
+}
+
+@-webkit-keyframes fadeInProgress {
+  0% {
+    background-color: transparent;
+    -webkit-text-fill-color: black;
+  }
+
+  100% {
+    background-color: black;
+    -webkit-text-fill-color: white;
+  }
+}
+
+@-webkit-keyframes fadeOutProgress {
+  0% {
+    background-color: black;
+    -webkit-text-fill-color: white;
+  }
+
+  100% {
+    background-color: transparent;
+    -webkit-text-fill-color: black;
+  }
+}
+
+/* >= md */
+/* @media only screen and (min-width : 992px) {
+  section#about .row .column .skills-content {
+    width: 75%;
+  }
+} */
+
+/* sm to md */
+/* @media only screen and (min-width : 768px) and (max-width : 992px) {
+  section#about .row .column .skills-content {
+    width: 85%;
+  }
+} */
+
+/* <= sm */
+@media only screen and (max-width : 768px) {
+  /* section#about .row .column {
+    width: 75%;
+  } */
+
+  section#about .row .column .skills-content {
+    width: 100%;
+  }
+
+  section#about .content-wrapper > .row {
+    flex-direction: column;
+  }
+
+  section#about .content-wrapper {
+    position: static;
+    padding-top: 5%;
+    padding-bottom: 5%;
+  }
+}
+
+/* RESPONSIVE VERTICAL SEPERATOR */
+hr.vertical {
+  height: 100%;
+  width: 1px;
+
+  margin-left: 0;
+  margin-right: 0;
+}
+
+hr.tapered {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+hr.tapered.vertical {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
