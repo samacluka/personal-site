@@ -93,3 +93,10 @@ section#socials .email:hover svg {
 section#socials .resume:hover svg {
   fill: #78D2E1;
 }
+
+/* <= sm */
+@media only screen and (max-width : 768px) {
+  section#socials {
+    margin-bottom: 10px;
+  }
+}

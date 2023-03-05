@@ -49,5 +49,9 @@ $(document).ready(function(){
         if (!$(e.target).is('[data-toggle="popover"]') && $(e.target).closest('.popover').length == 0) {
             $('[data-toggle="popover"]').popover('hide');
         }
+
+        if(!$(e.target).is('.flip-card-container') && $(e.target).closest('.flip-card-container').length == 0){
+            $('.flip-hold').prop('checked', false);
+        }
     });
 });
