@@ -44,7 +44,7 @@ Array.prototype.groupBy = function(group){
 // ======================================== INDEX ========================================
 // GET
 callbacks.index.get.landing = function(req,res){
-  var abouts = require(rootDir+'data/about.js');
+  var abouts = require(rootDir+'data/about.js').groupBy('group');
   var socials = require(rootDir+'data/socials.js');
   var skills = require(rootDir+'data/skills.js').groupBy('group');
 

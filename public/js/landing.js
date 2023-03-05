@@ -30,8 +30,8 @@ $(document).ready(function(){
 
     $('.flip-card-container').on('click', function(e){
         if( $(e.target).closest('.camera-button').length ) return;
-        let input = $(this).find('.flip-input'); 
-        input.prop('checked', !input.prop('checked'));
+        let hold = $(this).find('.flip-hold');
+        hold.prop('checked', !hold.prop('checked'));
     });
 
     $('[data-toggle="popover"]').popover({

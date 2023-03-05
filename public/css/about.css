@@ -1,4 +1,8 @@
 /* ABOUT SECTION */
+.h-90 {
+  height: 90%;
+}
+
 section#about .content-wrapper {
   display: flex;
   justify-content: center;
@@ -9,7 +13,7 @@ section#about .content-wrapper {
 section#about .content-wrapper > .row {
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
+  /* align-items: center; */
 }
 
 section#about .row .column {
@@ -45,7 +49,20 @@ section#about .about-content h4 {
 
 /* CUSTOM ALERTS */
 section#about .alert {
-  border-radius: 3rem;
+  border-radius: 2.5rem;
+}
+
+section#about .alert a:hover,
+section#about .alert a:hover svg {
+  text-decoration: underline;
+}
+
+section#about .alert a svg {
+  height: 12px;
+  width: 12px;
+  font-size: 12px;
+  line-height: 12px;
+  vertical-align: baseline;
 }
 
 .alert-purple hr { border-top-color: #5910864A; }
@@ -90,7 +107,7 @@ section#about .alert {
 
 /* FLIP CARDS */
 .flip-card-container {
-  width: 400px;
+  width: 275px;
   height: 165px;
   perspective: 1000px;
   margin-bottom: 10px;
@@ -105,7 +122,7 @@ section#about .alert {
 }
 
 .flip-card-container:hover .flip-card,
-.flip-card-container .flip-input:checked ~ .flip-card {
+.flip-card-container .flip-hold:checked ~ .flip-card {
   transform: rotateY(180deg); /* <=>  rotateY(.5turn) */
 }
 
@@ -164,13 +181,6 @@ ul.custom {
 ul li.custom {
   position: relative;
   padding-left: 1.5em;
-}
-
-ul li.regular:before {
-  position: absolute;
-  left: 0;
-  width: 1em;
-  height: 1em;
 }
 
 ul li.checkmark:before {
@@ -306,6 +316,8 @@ section#about .skills-column .progress-bar.positive:hover {
   }
 }
 
+/* RESPONSIVE CONTROL */
+
 /* >= md */
 /* @media only screen and (min-width : 992px) {
   section#about .row .column .skills-content {
@@ -332,18 +344,27 @@ section#about .skills-column .progress-bar.positive:hover {
 
   section#about .content-wrapper > .row {
     flex-direction: column;
+    align-items: center;
   }
 
-  section#about .content-wrapper {
-    position: static;
-    padding-top: 5%;
-    padding-bottom: 5%;
+  section#about hr.vertical {
+    display: none;
   }
+}
+
+section#about .content-wrapper {
+  position: static;
+  padding-top: 5%;
+  padding-bottom: 5%;
 }
 
 /* RESPONSIVE VERTICAL SEPERATOR */
 hr.vertical {
-  height: 100%;
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+
+  height: 90%;
   width: 1px;
 
   margin-left: 0;
