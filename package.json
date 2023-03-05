@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
-    "nodemon": "nodemon app.js -e ejs,js,css"
+    "nodemon": "nodemon app.js -e ejs,js,css",
+    "prodStart": "forever start app.js",
+    "prodStop": "forever stop app.js"
   },
   "repository": {
     "type": "git",
