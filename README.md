@@ -1,2 +1,2 @@
-# Consulting
-A consulting splash page
+# Luka Samac
+A website for me
