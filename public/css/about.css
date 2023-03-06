@@ -70,6 +70,7 @@ section#about .alert a svg {
 .alert-purple a {
 	color: #511178;
 	background-color: #c590dd;
+  border-color: #a974c1;
 }
 .alert-purple svg { fill: #511178; }
 
@@ -78,6 +79,7 @@ section#about .alert a svg {
 .alert-salmon a {
 	color: #721B00;
 	background-color: #FF8C69;
+  border-color: #e47350;
 }
 .alert-salmon svg { fill: #721B00; }
 
@@ -86,6 +88,7 @@ section#about .alert a svg {
 .alert-lightblue a {
 	color: #165863;
 	background-color: #78D2E1;
+  border-color: #5cb8c9;
 }
 .alert-lightblue svg { fill: #165863; }
 
@@ -94,6 +97,7 @@ section#about .alert a svg {
 .alert-peach a {
 	color: #632E0C;
 	background-color: #FFA262;
+  border-color: #e1894e;
 }
 .alert-peach svg { fill: #632E0C; }
 
@@ -102,6 +106,7 @@ section#about .alert a svg {
 .alert-red a {
 	color: #671919;
 	background-color: #FF7575;
+  border-color: #df5050;
 }
 .alert-red svg { fill: #671919; }
 
