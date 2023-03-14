@@ -11,34 +11,37 @@ var callbacks = {
 };
 // ======================================= HELPER ========================================
 Array.prototype.chunk = function(perChunk){
-  return this.reduce((resultArray, item, index) => { 
+  return this.reduce((retObj, item, index) => { 
     const chunkIndex = Math.floor(index/perChunk);
 
-    if(!resultArray[chunkIndex]) {
-      resultArray[chunkIndex] = [];
+    if(!retObj[chunkIndex]) {
+      retObj[chunkIndex] = [];
     }
 
-    resultArray[chunkIndex].push(item);
+    retObj[chunkIndex].push(item);
 
-    return resultArray;
-  }, []);
+    return retObj;
+  }, {});
 }
 
-Array.prototype.groupBy = function(group){
-  var resultArray = {};
-  
-  this.forEach(val => {
-    if(typeof val[group] !== 'undefined'){
-      if(typeof resultArray[val[group]] !== 'undefined'){
-        resultArray[val[group]].push(val);
-      }
-      else {
-        resultArray[val[group]] = [val];
-      }
-    }
-  });
+Array.prototype.groupBy = function(field){
+  return this.reduce((retObj, item) => {
+    if(typeof item[field] === 'undefined') return retObj;
 
-  return resultArray;
+    if(typeof retObj[item[field]] === 'undefined') {
+      retObj[item[field]] = [];
+    }
+
+    retObj[item[field]].push(item);
+
+    return retObj;
+  }, {});
+}
+
+Array.prototype.simpleSort = function(field){
+  return this.sort((a, b) => {
+    return a[field] > b[field] ? 1 : -1;
+  });
 }
 
 // ======================================== INDEX ========================================
@@ -46,7 +49,7 @@ Array.prototype.groupBy = function(group){
 callbacks.index.get.landing = function(req,res){
   var abouts = require(rootDir+'data/about.js').groupBy('group');
   var socials = require(rootDir+'data/socials.js');
-  var skills = require(rootDir+'data/skills.js').groupBy('group');
+  var skills = require(rootDir+'data/skills.js').simpleSort('strength').reverse().groupBy('group');
 
   return res.render(views.index.landing, {
     abouts: abouts,
